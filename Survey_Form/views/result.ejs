@@ -2,17 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Survey Form</title>
 </head>
 <body>
-        <h3> Submitted Information </h3>
-        Name: <%= results.name %> <br>
-        Dojo Location:  <%= results.location %> <br>
-        Favorite Language:  <%= results.language %> <br>
-        Comment:  <%= results.comment %> <br>
-        <a href="/"><button>Go Back</button></a>
-    </form>
+    <h2>Submitted Information</h2>
+    <ul>
+        <li>Name: <%= user_data.name%></li>
+        <li>Dojo location: <%= user_data.dojo_location%></li>
+        <li>Favorite language: <%= user_data.favorite_language%></li>
+        <li>Comment: <%= user_data.comment%></li>
+    </ul>
 </body>
 </html>

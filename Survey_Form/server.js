@@ -1,33 +1,15 @@
-const express = require('express');
-const bodyParser = require('body-parser');
-const path = require('path');
-const session = require('express-session');
-const app = express();
+var express = require("express");
+var path = require("path");
+var bodyParser = require('body-parser');
 
-app.use(session({
-  secret:'DojoCoding'
-}));
-app.use(bodyParser.urlencoded({extended:true}));
+var app = express();
+app.use(bodyParser.urlencoded());
+app.use(express.static(path.join(__dirname, './static')));
 app.set('views', path.join(__dirname, './views'));
-app.set('view engine', 'ejs');// here we're setting up the ejs
+app.set('view engine', 'ejs');
 
-app.get('/', function(req,res){
-  res.render("index");
-});
-app.post('/result', function (req, res) {
+var route = require('./routes/index.js')(app);
 
-  req.session.inputs = {
-    name: req.body.name,
-    location: req.body.location,
-    language: req.body.language,
-    comment: req.body.comment
-  };
-  console.log("POST data: ", req.session.inputs);
-  res.redirect('/result');
+app.listen(3000, function(){
+    console.log('listening on port 3000');
 });
-app.get('/result', function (req,res) {
-  res.render("result", {results: req.session.inputs})
-});
-app.listen(3000, function() {
-  console.log("Listening on 3000");
-})

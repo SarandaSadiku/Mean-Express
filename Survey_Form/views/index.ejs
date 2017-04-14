@@ -2,33 +2,37 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
     <title>Survey Form</title>
 </head>
 <body>
     <form action="/result" method="post">
-        Your Name:
-        <input type="text" name="name" value=""><br>
-        Dojo Location:
-        <select name="location">
-            <option value="SILICON VALLEY">SILICON VALLEY</option>
-            <option value="SEATTLE">SEATTLE</option>
-            <option value="LOS ANGELES">LOS ANGELES</option>
-            <option value="DALLAS">DALLAS</option>
-            <option value="WASHINGTON DC">WASHINGTON DC</option>
-            <option value="CHICAGO">CHICAGO</option>
-        </select><br>
-        Favorite Language:
-        <select class="language">
-            <option value="JavaScript">JavaScript</option>
-            <option value="Python">Python</option>
-            <option value="C#">C#</option>
-            <option value="C++">C++</option>
-        </select><br>
-        Comment(optional): <br>
-        <textarea name="comment" rows="8" cols="40"></textarea><br>
-        <input type="submit" value="Submit">
+        <div id="name">
+            <label for="name">Your Name:</label>
+            <input type="text" name="name">
+        </div>
+        <div id="location">
+            <label for="location">Dojo Location:</label>
+            <select name="dojo_location">
+                <option value="Mountain View">Mountain View</option>
+                <option value="Seatle, Wa">Seatle, Wa</option>
+                <option value="Los Angeles">Los Angeles</option>\<option value="Canada">Canada</option>
+            </select>
+        </div>
+        <div id="language">
+            <label for="language">Favorite Language: </label>
+            <select name="favorite_language">
+                <option value="NodeJs">NodeJs</option>
+                <option value="PHP">PHP</option>
+                <option value="Express">Express</option>
+                <option value="Javascript">Javascript</option>
+            </select>
+        </div>
+        <div id="comment">
+            <label for="comment">Comment (optional):</label><br>
+            <textarea name="comment" rows="8" cols="0"></textarea>
+        </div>
+        <input type="submit" name="" value="Submit">
     </form>
 </body>
 </html>
